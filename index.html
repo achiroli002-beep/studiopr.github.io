@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO — aggiornati automaticamente da script.js tramite STUDIO.name / tagline -->
+  <title>Studio — Professionisti Indipendenti</title>
+  <meta id="meta-desc" name="description" content="Uno studio che riunisce professionisti indipendenti di eccellenza." />
+
+  <!-- Open Graph -->
+  <meta id="og-title" property="og:title" content="Studio" />
+  <meta id="og-desc" property="og:description" content="Uno studio che riunisce professionisti indipendenti." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="[URL_SITO]" />
+  <meta property="og:image" content="[URL_OG_IMAGE]" />
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23C06033'/><text x='50' y='72' font-size='62' text-anchor='middle' fill='%23FAF8F4' font-family='Georgia,serif'>S</text></svg>" />
+
+  <!-- Fraunces (display serif) + Inter (body sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Grain texture overlay (decorativo, aria-hidden) -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════
+       NAVIGAZIONE STICKY
+  ════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Navigazione principale">
+
+      <a href="#hero" class="nav-logo" aria-label="Torna in cima — home">
+        <span id="nav-studio-name">Studio</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Apri menu di navigazione">
+        <span class="ham-line" aria-hidden="true"></span>
+        <span class="ham-line" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="#studio"        class="nav-link">Studio</a></li>
+        <li><a href="#professionisti" class="nav-link">Professionisti</a></li>
+        <li><a href="#servizi"       class="nav-link">Servizi</a></li>
+        <li><a href="#contatti"      class="nav-link">Contatti</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════
+         01 — HERO
+    ════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+
+        <p class="hero-eyebrow" data-reveal="fade-up">
+          <span id="hero-location">Studio Professionale · Milano</span>
+        </p>
+
+        <h1 class="hero-title" id="hero-title" data-reveal="fade-up" data-reveal-delay="80">
+          <!-- Popolato da JS: ultima parola in <em> -->
+        </h1>
+
+        <p class="hero-tagline" id="hero-tagline" data-reveal="fade-up" data-reveal-delay="160">
+          <!-- Popolato da JS -->
+        </p>
+
+        <p class="hero-intro" id="hero-intro" data-reveal="fade-up" data-reveal-delay="240">
+          <!-- Popolato da JS -->
+        </p>
+
+        <a href="#professionisti" class="hero-cta" data-reveal="fade-up" data-reveal-delay="320">
+          Scopri i professionisti
+          <span class="cta-arrow" aria-hidden="true">↓</span>
+        </a>
+
+      </div>
+
+      <!-- Numero decorativo di sfondo -->
+      <span class="hero-deco-num" aria-hidden="true">01</span>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         02 — LO STUDIO
+    ════════════════════════════════════ -->
+    <section class="section-studio" id="studio" aria-labelledby="studio-heading">
+      <div class="container studio-grid">
+
+        <div class="studio-meta" data-reveal="fade-right">
+          <span class="section-tag">Lo studio</span>
+          <span class="section-num" aria-hidden="true">02</span>
+        </div>
+
+        <div class="studio-body">
+          <h2 class="studio-heading display-heading" id="studio-heading" data-reveal="fade-up">
+            <!-- Popolato da JS -->
+          </h2>
+          <p class="studio-manifesto" id="studio-manifesto" data-reveal="fade-up" data-reveal-delay="80">
+            <!-- Popolato da JS -->
+          </p>
+          <p class="studio-manifesto-2" id="studio-manifesto-2" data-reveal="fade-up" data-reveal-delay="160">
+            <!-- Popolato da JS -->
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         03 — I PROFESSIONISTI
+    ════════════════════════════════════ -->
+    <section class="section-professionals" id="professionisti" aria-labelledby="professionals-heading">
+      <div class="container">
+        <div class="section-header-row" data-reveal="fade-up">
+          <span class="section-tag">I professionisti</span>
+          <span class="section-num" aria-hidden="true">03</span>
+        </div>
+        <h2 class="section-title display-heading" id="professionals-heading" data-reveal="fade-up" data-reveal-delay="60">
+          Chi trovi<br><em>nel nostro studio</em>
+        </h2>
+      </div>
+
+      <!-- Desktop: directory interattiva (visibile ≥ 769px) -->
+      <div class="professionals-directory" id="professionals-directory" role="region" aria-label="Directory interattiva dei professionisti">
+        <div class="container directory-container">
+          <div class="directory-names" role="tablist" aria-orientation="vertical" id="directory-names">
+            <!-- Popolato da JS -->
+          </div>
+          <div class="directory-panel" aria-live="polite" id="directory-panel">
+            <!-- Popolato da JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile: card impilate (visibili < 769px) -->
+      <div class="professionals-cards container" id="professionals-cards" aria-label="Schede professionisti">
+        <!-- Popolato da JS -->
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         04 — AREE DI COMPETENZA
+    ════════════════════════════════════ -->
+    <section class="section-services" id="servizi" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header-row" data-reveal="fade-up">
+          <span class="section-tag">Aree di competenza</span>
+          <span class="section-num" aria-hidden="true">04</span>
+        </div>
+        <h2 class="section-title display-heading" id="services-heading" data-reveal="fade-up" data-reveal-delay="60">
+          Cosa facciamo
+        </h2>
+        <ul class="services-list" id="services-list" role="list">
+          <!-- Popolato da JS -->
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         05 — CONTATTI
+    ════════════════════════════════════ -->
+    <section class="section-contact" id="contatti" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+
+        <!-- Info studio -->
+        <div class="contact-info" data-reveal="fade-right">
+          <span class="section-tag">Contatti</span>
+          <span class="section-num" aria-hidden="true">05</span>
+
+          <h2 class="contact-title display-heading" id="contact-heading">
+            Parliamo<br>del tuo<br><em>progetto</em>
+          </h2>
+
+          <address class="contact-details" aria-label="Recapiti studio">
+            <p id="contact-address"></p>
+            <p><a id="contact-email-link" href="#"></a></p>
+            <p><a id="contact-phone-link" href="#"></a></p>
+          </address>
+        </div>
+
+        <!-- Form contatto -->
+        <div class="contact-form-wrap" data-reveal="fade-up">
+          <form class="contact-form" id="contact-form" novalidate aria-label="Modulo di contatto">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-name">Nome e cognome <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="text" id="field-name" name="name" required autocomplete="name"
+                       aria-required="true" aria-describedby="err-name" />
+                <span class="field-error" id="err-name" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="field-email">Email <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="email" id="field-email" name="email" required autocomplete="email"
+                       aria-required="true" aria-describedby="err-email" />
+                <span class="field-error" id="err-email" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-phone">
+                  Telefono
+                  <span class="label-note">(opzionale)</span>
+                </label>
+                <input type="tel" id="field-phone" name="phone" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="field-recipient">Professionista di riferimento <span class="required-star" aria-hidden="true">*</span></label>
+                <div class="select-wrap">
+                  <select id="field-recipient" name="recipient" required
+                          aria-required="true" aria-describedby="err-recipient">
+                    <option value="">Seleziona…</option>
+                    <option value="studio">Studio / Generico</option>
+                    <!-- Popolato da JS con i professionisti -->
+                  </select>
+                  <span class="select-chevron" aria-hidden="true"></span>
+                </div>
+                <span class="field-error" id="err-recipient" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="field-message">Messaggio <span class="required-star" aria-hidden="true">*</span></label>
+              <textarea id="field-message" name="message" rows="5" required
+                        aria-required="true" aria-describedby="err-message"
+                        placeholder="Descrivi brevemente il tuo progetto o la tua richiesta…"></textarea>
+              <span class="field-error" id="err-message" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="field-privacy" name="privacy" required
+                       aria-required="true" aria-describedby="err-privacy" />
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                <span class="checkbox-text">
+                  Ho letto e accetto la
+                  <a href="[LINK_PRIVACY_POLICY]" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                  e acconsento al trattamento dei dati personali ai sensi del GDPR.
+                  <span class="required-star" aria-hidden="true">*</span>
+                </span>
+              </label>
+              <span class="field-error" id="err-privacy" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit" id="btn-submit">
+                <span class="btn-label">Invia messaggio</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+                <span class="btn-loading-text">Invio in corso…</span>
+              </button>
+            </div>
+
+            <div class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <span class="footer-name" id="footer-studio-name">Studio</span>
+        <span class="footer-vat" id="footer-vat">P.IVA 00000000000</span>
+      </div>
+
+      <nav class="footer-nav" aria-label="Link legali">
+        <a href="[LINK_PRIVACY_POLICY]" class="footer-link">Privacy Policy</a>
+        <a href="[LINK_COOKIE_POLICY]" class="footer-link">Cookie Policy</a>
+      </nav>
+
+      <p class="footer-copy">
+        <span id="footer-year"></span>
+        &copy; <span id="footer-studio-name-copy">Studio</span>. Tutti i diritti riservati.
+      </p>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
