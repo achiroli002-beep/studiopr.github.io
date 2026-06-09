@@ -146,6 +146,17 @@ function populateStudio() {
   const phoneLink = document.getElementById("contact-phone-link");
   phoneLink.textContent = STUDIO.phone;
   phoneLink.href = `tel:${STUDIO.phone.replace(/\s/g, "")}`;
+
+  // Rivela il contenuto hero subito dopo averlo popolato,
+  // senza aspettare l'IntersectionObserver (che è asincrono).
+  revealHeroElements();
+}
+
+function revealHeroElements() {
+  document.querySelectorAll("#hero [data-reveal]").forEach(el => {
+    const delay = Number(el.dataset.revealDelay ?? 0);
+    setTimeout(() => el.classList.add("is-visible"), delay + 60);
+  });
 }
 
 /* Titolo hero: divide l'ultima parola del nome studio e la mette in <em> */
@@ -567,7 +578,7 @@ function initScrollReveal() {
   const targets = document.querySelectorAll("[data-reveal]");
   if (!targets.length) return;
 
-  // Se prefers-reduced-motion è attivo, mostra tutto subito
+  // Reduced-motion: mostra tutto immediatamente, senza animazioni
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     targets.forEach(el => el.classList.add("is-visible"));
     return;
@@ -580,12 +591,24 @@ function initScrollReveal() {
       setTimeout(() => entry.target.classList.add("is-visible"), delayMs);
       observer.unobserve(entry.target);
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  });
+  }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
 
-  targets.forEach(el => observer.observe(el));
+  // requestAnimationFrame garantisce che il layout sia completato
+  // prima di leggere getBoundingClientRect
+  requestAnimationFrame(() => {
+    targets.forEach(el => {
+      if (el.classList.contains("is-visible")) return; // già rivelato
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        // Già nella viewport: rivela subito con il suo delay di stagger
+        const delayMs = Number(el.dataset.revealDelay ?? 0);
+        setTimeout(() => el.classList.add("is-visible"), delayMs);
+      } else {
+        // Sotto la fold: usa l'observer
+        observer.observe(el);
+      }
+    });
+  });
 }
 
 

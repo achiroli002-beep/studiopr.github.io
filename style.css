@@ -182,6 +182,12 @@ button {
   transform: none;
 }
 
+/* Fallback: se JS non gira (noscript), tutto il contenuto è visibile */
+.no-js [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Stagger delay tramite attributo data-reveal-delay (in ms) */
 [data-reveal-delay="80"]  { transition-delay: 80ms; }
 [data-reveal-delay="160"] { transition-delay: 160ms; }
